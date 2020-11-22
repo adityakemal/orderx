@@ -1,0 +1,16 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    form{
+        width: 400px;
+        .inp{
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        button{
+            width: 100%;
+        }
+    }
+}
