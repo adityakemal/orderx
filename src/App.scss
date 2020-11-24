@@ -7,15 +7,25 @@ body{
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: #FDF8F5;
+  // background-color: #FDF8F5;
 }
-// h1, h2, h3, h4, h5, h6{
-//   // margin-top: 0 !important;
-// }
+h1, h2, h3, h4, h5, h6{
+  // margin-top: 0 !important;
+  color: #485E6E !important;
+}
 
-input{
-  background-color: white !important;
+p{
+  color: #637583 !important;
 }
+
+.inp{
+  background-color: white;
+  input, label, span, textarea, button{
+    font-family: 'Montserrat', sans-serif !important;
+    background-color: white !important;
+  }
+}
+
 
 .modal_remove_outline{
   outline: none !important;
@@ -34,6 +44,7 @@ input{
 
 button{
   height: 56px;
+  font-family: 'Montserrat', sans-serif !important;
   &:focus{
     outline: none;
   }
@@ -45,6 +56,16 @@ button{
   } 
 }
 
+// sementara 
+.bg-blue{
+  background-color: skyblue;
+}
+
+.bg-red{
+  background-color: red;
+}
+
 @import './styles/login.scss';
 @import './styles/products.scss';
 @import './styles/dashboard.scss';
+@import './styles/add_menu.scss';

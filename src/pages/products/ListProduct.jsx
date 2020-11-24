@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Button } from '@material-ui/core';
+import { Container, Button, Grid } from '@material-ui/core';
 import CardsProduct from './components/CardsProduct';
 import ModalTemplate from '../shared/ModalTemplate';
-import { Send } from 'react-feather';
+import { Send, X } from 'react-feather';
 
 
 
@@ -49,43 +49,74 @@ class ListProduct extends Component {
                 </li>
                 {
                     this.state.orderData.map((res,i)=> 
-                        <li> 
-                            <p>{res.name} </p> 
+                        <li key={i}> 
+                            <p>{i + 1}. {res.name} </p> 
                             <p>{res.order}</p> 
                             <p>Rp {res.price !== 0 ? res.price * res.order : res.price}</p>
                         </li>
                     )
                 }
                 <li className='total'>
-                    <h4>Total</h4>
+                    <h4>Total Pesanan</h4>
+                    <h4>{this.state.orderData.length} item</h4>
+                </li>
+                <li className='total'>
+                    <h4>Total Harga</h4>
                     <h4>Rp {this.state.totalOrder}</h4>
                 </li>
             </ul>
-            <Button endIcon={<Send/>} onClick={this.handleWA} variant="contained" color="primary">Pesan Sekarang</Button>
+            <Button endIcon={<i className="fab fa-whatsapp"></i>} onClick={this.handleWA} variant="contained" color="primary">Pesan Sekarang Melalui WhatsApp</Button>
         </div>
     )
+
+    comNoteModal = ()=>{
+        <div className="note_modal">
+            <div className="title">
+                <h4>Note</h4>
+                <X />
+            </div>
+        </div>
+    }
 
     
     render() {
         console.log(this.state)
         
         return (
-            <>
+            <Container maxWidth="fixed">
             <ModalTemplate 
+                onOpen={this.state.modal} 
+                onClose={this.modalClose}
+                component={this.listOrderModal}
+            />
+             <ModalTemplate 
                 onOpen={this.state.modal} 
                 onClose={this.modalClose}
                 component={this.listOrderModal}
             />
             <div className='list_prod'>
                 <h1>List Menu</h1>
-                <Container>
-                    <CardsProduct 
-                    ordered={ this.ordered }
-                    />
-                </Container>
+                    <Grid container spacing={3}>
+                        <Grid sm={2} item>
+                            <div className="kategori">
+                                <h3>KATEGORI</h3>
+                                <ul>
+                                    <li><h4>Semua</h4></li>
+                                    <li><h4>Makanan</h4></li>
+                                    <li><h4>Minuman</h4></li>
+                                </ul>
+                            </div>
+                        </Grid>
+                        <Grid sm={10} item>
+                            <CardsProduct 
+                            ordered={ this.ordered }
+                            />
+                        </Grid>
+                        {/* <Grid sm={2} item>sdffs</Grid> */}
+                    </Grid>
 
             </div>
-            </>
+            </Container>
         );
     }
 }

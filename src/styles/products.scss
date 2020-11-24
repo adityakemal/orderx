@@ -5,28 +5,95 @@
         text-align: center;
         // margin-bottom: 0px;
     }
+    .kategori{
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                list-style-type: none;
+                cursor: pointer;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                // border: 1px solid grey;
+                border-radius: 6px;
+                &:hover{
+                    transition: .3s;
+                    padding: 0 10px;
+                    background-color: #4990E2;
+                    // box-shadow: 10px 0px 15px #4990E2 !important;
+                    h4{
+                        transition: 0s;
+                        color: white !important;
+                        font-weight: 400 !important;
+                    }
+                }
+                h4{
+                    font-weight: 300;
+                    &::before{
+                        content: '°';
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
     .card_prod{
         background-color: white;
-        padding: 20px;
+        padding: 15px;
         display: flex;
-        border: 1px solid skyblue;
-        border-radius: 20px;
+        position: relative;
+        // border: 1px solid skyblue;
+        border-radius: 6px;
+        box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+        transition: 1s;
+        .choosen{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgb(87, 148, 87);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 10px;
+            top: 10px;
+            svg{
+                color: white;
+            }
+        }
         .left{
-            width: 70%;
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            h5{
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
             p{
-                font-size: 14px;
+                font-size: 12px;
                 padding-right: 10px;
+            }
+            .note{
+                button{
+                    width: 40px;
+                    height: 40px;
+                    box-shadow: unset !important;
+                    svg{
+                        width: 18px;
+                    }
+                }
             }
         }
         .right{
-            width: 30%;
-
+            width: 40%;
             img{
                 width: 100%;
                 object-fit: contain;
                 height: auto;
-                border-radius: 20px;
-                margin-bottom: 20px;
+                border-radius: 6px;
+                margin-bottom: 15px;
             }
             .adjust_order{
                 display: flex;
@@ -41,16 +108,17 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    border: 3px solid skyblue;
+                    border: 2px solid #e0e0e0;
                     background-color: white;
+                    
                 }
-                h3{
+                h4{
                     margin: 0 10px;
                 }
             }
             button{
                 width: 100%;
-                background-color: skyblue;
+                background-color: #e0e0e0;
                 height: 40px;
                 border-radius: 20px;
                 font-weight: 700;
@@ -68,8 +136,9 @@
         text-align: center;
         button{
             // height: 40px;
-            border-radius: 20px;
-            width: 100%;
+            // border-radius: 20px;
+            background-color: #4990E2;
+            width: 50%;
             text-transform: capitalize;
         }
     }
@@ -88,7 +157,7 @@
             list-style-type: none;
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid whitesmoke;
+            border-bottom: 1px solid #e0e0e0;
             &:last-of-type{
                 color: green;
             }
@@ -107,10 +176,18 @@
     button{
         margin-top: 20px;
         width: 100%;
+        text-transform: unset;
     }
 }
 
 @media only screen and (max-width: 768px) {
+    .list_prod{
+        .foot_product{
+            button{
+                width: 100%;
+            }
+        }
+    }
     .modal_list_order{
         background-color: white;
         width: 85vw;
@@ -124,11 +201,11 @@
                 list-style-type: none;
                 display: flex;
                 justify-content: space-between;
-                border-bottom: 1px solid whitesmoke;
                 &:last-of-type{
                     color: green;
                 }
                 p, h4{
+                    font-size: 12px;
                     flex: 1;
                     text-align: center;
                     &:first-of-type{
