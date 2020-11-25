@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { Grid, Button, Fab } from '@material-ui/core';
+import { Grid, Button, Fab, TextField } from '@material-ui/core';
 import { Plus, Minus, Check, Edit } from 'react-feather';
+import ModalTemplate from '../../shared/ModalTemplate';
+import { X } from 'react-feather';
+
 
 
 
@@ -19,7 +22,8 @@ class CardsProduct extends Component {
             {id:'9', order:0, image: 'https://picsum.photos/id/326/200',name:' Sate', category: 'food', price: '25000', description: 'diolah dengan bahan pilihan.'},
             {id:'10',order:0, image: 'https://picsum.photos/id/326/200', name:' Bubur Ayam', category: 'food', price: '25000', description: 'diolah dengan bahan pilihan.'},
         ],
-        orderPicked : []
+        orderPicked : [],
+        modalNote : false
     }
 
 
@@ -52,16 +56,38 @@ class CardsProduct extends Component {
         this.setState({ orderPicked :  orderJson })
     }
 
+    modalNoteClose= ()=> this.setState({modalNote : false})
+
+    compNoteModal = ()=>(
+        <div className="notefood_modal">
+        <div className='title'>
+            <h3>Note</h3>
+            <X onClick={this.modalNoteClose} style={{cursor: 'pointer'}}/>
+        </div>
+        <form onSubmit={this.handleSubmit}>
+            <TextField multiline rows={4} className='inp' name='description' onChange={this.handleChange}  label='description' type="text" variant="outlined"  />
+            <Button type='submit' className='save_note'>Save</Button>
+        </form>
+    </div>
+    )
+       
+
+
     render() {
         return (
             <>
+            <ModalTemplate
+                onOpen={this.state.modalNote} 
+                // onClose={this.modalNoteClose}
+                component={ this.compNoteModal}
+            />
             <Grid container spacing={2}>
                 {
                     this.state.listData.map((res, i)=>{
                         const {name, description, price, image, id, order} = res
                         return(
-                        <Grid item key={id} xs={12} sm={4} >
-                            <div className="card_prod" style={order !== 0 ? {border: '1px solid green'} : null}>
+                        <Grid item key={i} xs={12} sm={4} >
+                            <div className="card_prod" >
                                 {order !== 0 ?<div className='choosen'> <Check/> </div>: null}
                                 <div className="left">
                                     <div>
@@ -74,7 +100,7 @@ class CardsProduct extends Component {
                                             <h5>Rp. {price}</h5>
                                         }
                                     </div>
-                                    <div className="note">
+                                    <div className="note" onClick={()=> this.setState({modalNote : true})}>
                                        { order !== 0 ? <Fab><Edit /></Fab> : null} 
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-.login{
+.login, .register{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,6 +11,11 @@
         }
         button{
             width: 100%;
+            background-color: $bg-primary;
+            color: white;
+            &:hover{
+                background-color: $bg-primary;
+            }
         }
     }
 }

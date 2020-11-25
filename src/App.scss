@@ -1,5 +1,6 @@
 // GLOBAL STYLE 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 
 body{
@@ -7,8 +8,14 @@ body{
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  // background-color: #FDF8F5;
+  // background-color: black;
 }
+// variables color
+$bg-primary: #4990E2;
+a{
+  text-decoration: unset !important;
+}
+
 h1, h2, h3, h4, h5, h6{
   // margin-top: 0 !important;
   color: #485E6E !important;
@@ -48,6 +55,10 @@ button{
   &:focus{
     outline: none;
   }
+  &:disabled{
+    background-color: #e0e0e0 !important;
+    border: 1px solid whitesmoke;
+  }
   span{
     display: flex !important;
     justify-content: center !important;
@@ -69,3 +80,4 @@ button{
 @import './styles/products.scss';
 @import './styles/dashboard.scss';
 @import './styles/add_menu.scss';
+@import './styles/navbar.scss';

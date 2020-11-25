@@ -8,6 +8,8 @@ import Login from './pages/auth/Login';
 import Dashboard from './pages/cashier/Dashboard';
 import ListProduct from './pages/products/ListProduct';
 import AddMenu from './pages/cashier/AddMenu';
+import Register from './pages/auth/Register';
+import AddQR from './pages/cashier/AddQR';
 
 function App() {
   return (
@@ -15,8 +17,10 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={Login} />
-          <Route exact path='/dashboard' component={Dashboard} />
+          <Route exact path='/register' component={Register} />
+          <Route exact path='/add-qr' component={AddQR} />
           <Route exact path='/add-menu' component={AddMenu} />
+          <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/products/:idResto/:idTable' component={ListProduct} />
           <Route exact path='*' component={()=> <div className='fof'><h2><b>404</b>  | Page not found..</h2></div>} />
         </Switch>
