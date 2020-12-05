@@ -81,7 +81,7 @@
                 color: white;
             }
         }
-        .left{
+        .desc_prod{
             width: 60%;
             display: flex;
             justify-content: space-between;
@@ -89,6 +89,10 @@
             h5{
                 margin-top: 5px;
                 margin-bottom: 5px;
+                span{
+                    text-decoration: line-through;
+                    color: maroon;
+                }
             }
             p{
                 font-size: 12px;
@@ -105,7 +109,7 @@
                 }
             }
         }
-        .right{
+        .image_prod{
             width: 40%;
             img{
                 width: 100%;
