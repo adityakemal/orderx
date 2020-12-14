@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, TextField } from '@material-ui/core';
 import QRImage from "react-qr-image";
 // import { XCircle } from 'react-feather';
-import Navbar from '../shared/Navbar';
+import CmsTemplate from '../shared/CmsTemplate';
 
 const urlBase = 'https://orderx-staging.web.app'
 
@@ -67,7 +67,7 @@ class AddQR extends Component {
     render() {
         console.log(this.state)
         return (
-            <Navbar isPage page={this.finalComponent} />
+            <CmsTemplate page={this.finalComponent} />
         );
     }
 }

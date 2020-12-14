@@ -21,6 +21,25 @@ body{
   }
 }
 
+nav{
+  background-color: white;
+  position: fixed !important;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  // justify-content: center;
+  padding: 0 20px;
+  align-items: center;
+  .logo{
+      font-family: 'Fredoka One', cursive;
+      font-size: 35px;
+      color: steelblue;
+  }
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -95,5 +114,5 @@ button{
 @import './styles/products.scss';
 @import './styles/dashboard.scss';
 @import './styles/add_menu.scss';
-@import './styles/navbar.scss';
+@import './styles/cms_template.scss';
 @import './styles/qrcode.scss';

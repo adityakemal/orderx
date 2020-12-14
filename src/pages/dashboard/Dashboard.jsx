@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Button, Grid } from '@material-ui/core';
 import QRCode from "react-qr-code";
-import Navbar from '../shared/Navbar';
+import CmsTemplate from '../shared/CmsTemplate';
 import { XCircle } from 'react-feather';
 import AddQR from '../qrcode/AddQR';
 
@@ -17,8 +17,7 @@ class Dashboard extends Component {
         
         return (
             <>
-                <Navbar 
-                    isPage
+                <CmsTemplate 
                     page={this.dashboardPage}
                 />
             </>

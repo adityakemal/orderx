@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Button, Grid } from '@material-ui/core';
 import CardsProduct from './components/CardsProduct';
 import ModalTemplate from '../shared/ModalTemplate';
-import Navbar from '../shared/Navbar';
+import Navbar from '../shared/Navbar.jsx';
 
 
 
@@ -76,7 +76,7 @@ class ListProduct extends Component {
         console.log(this.state)
         return (
             <>
-            <Navbar />
+            <Navbar/>
             <Container maxWidth="fixed">
             <ModalTemplate 
                 onOpen={this.state.modal} 

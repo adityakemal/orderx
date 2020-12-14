@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TextField, Button, Container} from '@material-ui/core';
-import Navbar from '../shared/Navbar';
+import Navbar from '../shared/Navbar.jsx';
 // import { LogIn } from 'react-feather';
 
 class Login extends Component {

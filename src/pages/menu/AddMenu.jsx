@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Button, TextField, MenuItem, Container } from '@material-ui/core';
 import { FilePlus } from 'react-feather';
-import Navbar from '../shared/Navbar';
+import CmsTemplate from '../shared/CmsTemplate';
 
 class AddMenu extends Component {
     state={
@@ -78,7 +78,7 @@ class AddMenu extends Component {
     )
     render() {
         return (
-            <Navbar isPage page={this.finalComp} />
+            <CmsTemplate page={this.finalComp} />
         );
     }
 }
