@@ -67,6 +67,7 @@ class AddMenu extends Component {
                                 ))}
                             </TextField>
                             <TextField  className='inp' name='price' onChange={this.handleChange}  label='price' type="number" variant="outlined" required />
+                            <TextField  className='inp' name='discount' onChange={this.handleChange}  label='Discount' type="number" variant="outlined" required />
                             <TextField multiline rows={4} className='inp' name='description' onChange={this.handleChange}  label='description' type="text" variant="outlined" required />
                             <Button variant="contained" type='submit' color="primary">Submit</Button>
 
@@ -77,7 +78,7 @@ class AddMenu extends Component {
     )
     render() {
         return (
-            <Navbar dashboard page={this.finalComp} />
+            <Navbar isPage page={this.finalComp} />
         );
     }
 }

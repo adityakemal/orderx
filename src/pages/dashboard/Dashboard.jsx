@@ -3,7 +3,7 @@ import { Container, Button, Grid } from '@material-ui/core';
 import QRCode from "react-qr-code";
 import Navbar from '../shared/Navbar';
 import { XCircle } from 'react-feather';
-import AddQR from './AddQR';
+import AddQR from '../qrcode/AddQR';
 
 
 class Dashboard extends Component {
@@ -18,7 +18,7 @@ class Dashboard extends Component {
         return (
             <>
                 <Navbar 
-                    dashboard
+                    isPage
                     page={this.dashboardPage}
                 />
             </>

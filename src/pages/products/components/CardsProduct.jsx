@@ -95,16 +95,21 @@ class CardsProduct extends Component {
                                     <div>
                                         <h5>{name}</h5>
                                         <p>{description}</p>
+                                        <p>{promo? <><span className="promo">Promo {promo}%</span></>: null}</p>
                                         {
                                             order !== 0 && promo !== 0?
-                                            <h5>Rp. {(price - (price * promo/100)) * order} promo {promo}%</h5>
+                                            <h5><span>Rp {price} </span> Rp {(price - (price * promo/100)) * order}</h5>
                                             :
                                             order !== 0 && promo === 0?
                                             <h5>Rp. {price * order}</h5>
                                             :
                                             <h5>
-                                                Rp. 
-                                                {promo?<> <span>{price} </span> {(price - (price * promo/100))}</> : price}
+                                                {
+                                                promo?
+                                                <> <span> Rp {price} </span> Rp {price - (price * promo/100)}</> 
+                                                : 
+                                                <>Rp {price}</>
+                                                }
                                             </h5>
                                         }
                                     </div>

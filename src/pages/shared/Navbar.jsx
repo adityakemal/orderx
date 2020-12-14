@@ -9,10 +9,10 @@ class Navbar extends Component {
     render() {
         const menus = [
             {id : 1, link: '/dashboard', label: 'Dashboard'},
-            {id : 2, link: '/add-menu', label: 'Add Menu'},
-            {id : 3, link: '/add-qr', label: 'Add QRCode Order'},
+            {id : 2, link: '/add-menu', label: 'Menu'},
+            {id : 3, link: '/add-qr', label: 'Table QRCode'},
         ]
-        const {dashboard, page} = this.props
+        const {isPage, page} = this.props
         console.log(this.props)
         return (
             <div className="navbar_container">
@@ -21,7 +21,7 @@ class Navbar extends Component {
                     <div className="logo">Order<span>X</span></div>
                 </nav>
                     {
-                        dashboard ? 
+                        isPage ? 
                         <Container maxWidth={false} className='nav_dash' >
                         <Grid container spacing={3} >
                             <Grid item sm={2} xs={12} style={{borderRight: '1px solid #e0e0e0', paddingTop : '60px' }}>
@@ -39,7 +39,7 @@ class Navbar extends Component {
                                     </ul>
                                 </div>
                             </Grid>
-                            <Grid item sm={10} style={{minHeight : '100vh', paddingTop : '60px'}}> 
+                            <Grid item sm={10} className="all_pages"> 
                                 {page()}
                             </Grid>
                         </Grid>

@@ -5,11 +5,11 @@ import {
   Route,
 } from "react-router-dom";
 import Login from './pages/auth/Login';
-import Dashboard from './pages/cashier/Dashboard';
+import Dashboard from './pages/dashboard/Dashboard';
 import ListProduct from './pages/products/ListProduct';
-import AddMenu from './pages/cashier/AddMenu';
+import AddMenu from './pages/menu/AddMenu';
 import Register from './pages/auth/Register';
-import AddQR from './pages/cashier/AddQR';
+import AddQR from './pages/qrcode/AddQR';
 
 function App() {
   return (
